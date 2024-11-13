@@ -1,0 +1,21 @@
+<launch>
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch" />
+    <!-- <include file="$(find turtlebot3_slam)/launch/turtlebot3_slam.launch" /> -->
+    <!-- <include file="$(find multi_turtlebot3_slam)/launch/multi_turtlebot3_slam.launch" /> -->
+    <!-- <node pkg="tf" type="static_transform_publisher" name="base_footprint_2_base_link" 
+        args="0 0 0.3 0 0 0 base_footprint base_scan 100" /> -->
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+
+    <node pkg="rviz" type="rviz" name="rviz"
+        args="-d $(find study_pkg)/rviz/sim_initial.rviz"
+    />
+
+
+
+</launch>
+
+<!--  Запускать по уроку 32 так -->
+<!-- roslaunch turtlebot3_gazebo turtlebot3_world.launch  -->
