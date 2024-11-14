@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="gmapping" type="slam_gmapping" name="gmapping">
+    <!-- <param name="base_frame" value="base_footprint" />
+    <param name="delta" value="0.1"/> -->
+    <rosparam command="load" 
+      file="$(find study_pkg)/config/gmapping_params.yaml" />
+  </node>
+</launch>

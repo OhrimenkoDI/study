@@ -1,0 +1,21 @@
+<launch>
+    <arg name="rviz" default="false" />
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch" />
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+
+    <!-- <node pkg="rviz" type="rviz" name="rviz"
+        args="-d $(find study_pkg)/rviz/sim_initial.rviz"
+    /> -->
+
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" 
+      args="-d $(find study_pkg)/rviz/sim_mapping.rviz" />
+
+
+</launch>
+
+<!--  Запускать по уроку 32 так -->
+<!-- roslaunch turtlebot3_gazebo turtlebot3_world.launch  -->
