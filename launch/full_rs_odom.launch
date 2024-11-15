@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find study_pkg)/launch/rgbd_odom.launch" />
+    <include file="$(find study_pkg)/launch/start_rs_camera.launch" />
+ </launch>

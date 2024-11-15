@@ -1,0 +1,8 @@
+ <launch>
+    <include file="$(find study_pkg)/launch/full_rs_odom.launch" />
+    <include file="$(find study_pkg)/launch/tf_transforms.launch" />
+    <include file="$(find study_pkg)/launch/slam_gmapping.launch" />
+    <include file="$(find study_pkg)/launch/start_ydlidar_x2.launch" />
+
+ </launch>
+
